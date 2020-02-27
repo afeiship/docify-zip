@@ -8,9 +8,10 @@
     "email": "1290657123@qq.com"
   },
   "scripts": {
+    "clean": "rm -rf *.zip",
     "thor:install": "thor install src/index.rb",
     "thor:list": "thor installed",
-    "thor:update": "thor update",
+    "thor:update": "thor update @feizheng/docify-zip",
     "thor:uninstall": "thor uninstall @feizheng/docify-zip"
   },
   "license": "MIT",

@@ -8,7 +8,7 @@ README_FILE = 'https://raw.githubusercontent.com/afeiship/docify-zip/master/file
 
 module ThorCli
   class DocifyZip < Thor
-    desc "zip NAME", "Zip with thor cli for docify."
+    desc "zip FILENAME, SUFFIX, PASSWORD", "Zip with thor cli for docify."
     option :force, :type => :boolean
     def zip(filename, suffix, password)
       name = File.basename(filename,'.*')
