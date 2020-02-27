@@ -1,0 +1,20 @@
+{
+  "name": "@feizheng/docify-zip",
+  "version": "1.0.0",
+  "description": "Zip with thor cli for docify.",
+  "homepage": "https://github.com/afeiship/docify-zip",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "thor:install": "thor install src/index.rb",
+    "thor:list": "thor installed",
+    "thor:update": "thor update",
+    "thor:uninstall": "thor uninstall @feizheng/docify-zip"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
