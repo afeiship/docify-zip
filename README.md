@@ -11,8 +11,11 @@ npm i @feizheng/docify-zip
 # debug
 ruby src/index.rb zip MyPdf.pdf _test.com 123
 
-# OR
-thor thor_cli:docify_zip:zip
+# Have password/suffix
+thor thor_cli:docify_zip:zip MyFiles _test.com 123123
+
+# No password/suffix
+thor thor_cli:docify_zip:zip MyFiles
 ```
 
 ## resources
