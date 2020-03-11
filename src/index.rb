@@ -4,14 +4,15 @@ require "thor"
 require "fileutils"
 require "tty-spinner"
 
-README_FILE = 'https://raw.githubusercontent.com/afeiship/docify-zip/master/files/README.txt'
+README_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/README.txt"
 
 module ThorCli
   class DocifyZip < Thor
     desc "zip FILENAME, SUFFIX, PASSWORD", "Zip with thor cli for docify."
     option :force, :type => :boolean
-    def zip(filename, suffix, password)
-      name = File.basename(filename,'.*')
+
+    def zip(filename, suffix, password = "")
+      name = File.basename(filename, ".*")
       spinner = TTY::Spinner.new("[:spinner] Zipping #{name}...", format: :spin)
       spinner.auto_spin
       # cache readme
@@ -19,8 +20,9 @@ module ThorCli
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{README_FILE}"
       end
 
-      system "zip -jq #{name}#{suffix}.zip #{filename} /tmp/README.txt --password #{password}"
-      spinner.success('(successful)')
+      command = password.empty? ? "" : " --password #{password}"
+      system "zip -jq #{name}#{suffix}.zip #{filename} /tmp/README.txt#{command}"
+      spinner.success("(successful)")
     end
 
     def self.exit_on_failure?
