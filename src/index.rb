@@ -11,7 +11,7 @@ module ThorCli
     desc "zip FILENAME, SUFFIX, PASSWORD", "Zip with thor cli for docify."
     option :force, :type => :boolean
 
-    def zip(filename, suffix, password = "")
+    def zip(filename, suffix = "", password = "")
       name = File.basename(filename, ".*")
       spinner = TTY::Spinner.new("[:spinner] Zipping #{name}...", format: :spin)
       spinner.auto_spin
