@@ -19,13 +19,14 @@ module ThorCli
       spinner.auto_spin
       # cache readme
       if !File.exist?("/tmp/README.txt") || options[:force]
+        puts "download..."
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{README_FILE}"
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{URL_FILE}"
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{LOC_FILE}"
       end
 
       command = password.empty? ? "" : " --password #{password}"
-      system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/52doc.com.url /tmp/52doc.com.webloc#{command}"
+      system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/52doc.com.* #{command}"
       spinner.success("(successful)")
     end
 
