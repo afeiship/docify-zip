@@ -5,8 +5,8 @@ require "fileutils"
 require "tty-spinner"
 
 README_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/README.txt"
-URL_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/52doc.com.url"
-LOC_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/52doc.com.webloc"
+URL_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/www.52doc.com.url"
+LOC_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/www.52doc.com.webloc"
 
 module ThorCli
   class DocifyZip < Thor
@@ -26,7 +26,7 @@ module ThorCli
       end
 
       command = password.empty? ? "" : " --password #{password}"
-      system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/52doc.com.* #{command}"
+      system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/www.52doc.com.* #{command}"
       spinner.success("(successful)")
     end
 
