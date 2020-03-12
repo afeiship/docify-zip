@@ -19,7 +19,6 @@ module ThorCli
       spinner.auto_spin
       # cache readme
       if !File.exist?("/tmp/README.txt") || options[:force]
-        puts "download..."
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{README_FILE}"
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{URL_FILE}"
         system "https_proxy=http://127.0.0.1:9090 wget -q --directory-prefix=/tmp #{LOC_FILE}"
