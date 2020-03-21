@@ -27,7 +27,7 @@ module ThorCli
       end
 
       command = password.empty? ? "" : " --password #{password}"
-      system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/www.52doc.com.* #{command}"
+      system "zip -jq '#{name}#{suffix}.zip' #{filename} /tmp/README.txt /tmp/www.52doc.com.* #{command}"
       spinner.success("(successful)")
     end
 
