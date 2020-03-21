@@ -8,13 +8,15 @@ README_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/file
 URL_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/www.52doc.com.url"
 LOC_FILE = "https://raw.githubusercontent.com/afeiship/docify-zip/master/files/www.52doc.com.webloc"
 
+# Could not find command "thor_cli:docify_zip:zip" in "thor_cli:docify_zip" namespace.
 module ThorCli
   class DocifyZip < Thor
     desc "zip FILENAME, SUFFIX, PASSWORD", "Zip with thor cli for docify."
     option :force, :type => :boolean
 
     def zip(filename, suffix = "", password = "")
-      name = basename(filename)
+      name = File.file?(filename) ? File.basename(filename, ".*") : File.basename(File.dirname(filename))
+
       spinner = TTY::Spinner.new("[:spinner] Zipping #{name}...", format: :spin)
       spinner.auto_spin
       # cache readme
@@ -27,14 +29,6 @@ module ThorCli
       command = password.empty? ? "" : " --password #{password}"
       system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/www.52doc.com.* #{command}"
       spinner.success("(successful)")
-    end
-
-    def basename(file)
-      if File.file?
-        File.basename(file, ".*")
-      else
-        File.basename(File.dirname(file))
-      end
     end
 
     def self.exit_on_failure?
