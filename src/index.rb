@@ -14,7 +14,7 @@ module ThorCli
     option :force, :type => :boolean
 
     def zip(filename, suffix = "", password = "")
-      name = File.basename(filename, ".*")
+      name = basename(filename)
       spinner = TTY::Spinner.new("[:spinner] Zipping #{name}...", format: :spin)
       spinner.auto_spin
       # cache readme
@@ -27,6 +27,14 @@ module ThorCli
       command = password.empty? ? "" : " --password #{password}"
       system "zip -jq '#{name}#{suffix}.zip' '#{filename}' /tmp/README.txt /tmp/www.52doc.com.* #{command}"
       spinner.success("(successful)")
+    end
+
+    def basename(file)
+      if File.file?
+        File.basename(file, ".*")
+      else
+        File.basename(File.dirname(file))
+      end
     end
 
     def self.exit_on_failure?
