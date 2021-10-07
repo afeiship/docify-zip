@@ -51,8 +51,6 @@ nx.declare({
 
       exec(`cd /tmp && unzip docify-zip.zip`);
       exec(`zip -jq '${name}${suffix}.zip' ${program.filename} ${TARGET_FILES}/* ${command}`);
-      // /tmp/docify-zip-master/files/
-      // console.log(chalk.green('🚗 hello cli.'), program.src, program.debug);
     }
   }
 });
