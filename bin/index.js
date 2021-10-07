@@ -29,7 +29,7 @@ program
   .option('-d, --debug', 'only show cmds, but not clean.')
   .option('-f, --filename <string>', 'The zip target filename.')
   .option('-p, --password <string>', 'The zip password.')
-  .option('-s, --src <string>', 'source filepath.', './src')
+  .option('-s, --suffix <string>', 'The filename suffix')
   .parse(process.argv);
 
 nx.declare({
