@@ -7,5 +7,3 @@ package-lock.json
 .DS_Store
 .idea
 .vscode
-*.zip
-*.tar.gz

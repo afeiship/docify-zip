@@ -1,21 +1,46 @@
 {
-  "name": "@feizheng/docify-zip",
+  "name": "@jswork/docify-zip",
   "version": "1.0.0",
-  "description": "Zip with thor cli for docify.",
+  "description": "Zip with nodejs cli for docify.",
   "homepage": "https://github.com/afeiship/docify-zip",
   "author": {
-    "name": "afeiship",
+    "name": "afei",
     "email": "1290657123@qq.com"
   },
-  "scripts": {
-    "clean": "rm -rf *.zip",
-    "thor:install": "thor install src/index.rb",
-    "thor:list": "thor installed",
-    "thor:update": "thor update @feizheng/docify-zip",
-    "thor:uninstall": "thor uninstall @feizheng/docify-zip"
+  "bin": {
+    "docify-zip": "bin/index.js"
   },
+  "scripts": {
+    "build": "gulp",
+    "release": "release-it"
+  },
+  "main": "index.js",
   "license": "MIT",
+  "dependencies": {
+    "@jswork/next-node-downfile": "^1.0.0",
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
+    "gulp-rename": "^2.0.0",
+    "require-dir": "^1.2.0",
+    "yargs": "^13.2.4"
+  },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  }
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@jswork/next": "^1.0.5",
+    "@jswork/next-absolute-package": "^1.0.1",
+    "@jswork/next-get-key": "^1.0.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-load-plugins": "^2.0.5",
+    "gulp-replace": "^1.0.0",
+    "prettier": "^2.1.2",
+    "release-it": "^14.2.1"
+  },
+  "keywords": [
+    "boilerplate",
+    "cli"
+  ]
 }
