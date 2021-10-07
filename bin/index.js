@@ -42,10 +42,7 @@ nx.declare({
   methods: {
     init() {},
     async start() {
-      await nx.nodeDownfile({
-        url: FILES_URL,
-        filename: `/tmp/docify-zip.zip`
-      });
+      await nx.nodeDownfile({ url: FILES_URL, filename: `/tmp/docify-zip.zip` });
       const name = basename(program.filename);
       const command = program.password ? ` --password ${password}` : '';
 
