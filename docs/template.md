@@ -20,6 +20,18 @@ npm i && npm link
 __USAGE__
 ~~~
 
+## user case
+1.  file with password
+   ```shell
+   docify-zip -f html_post_test.html -p 123
+   ```
+
+2. folder with password
+   ```shell
+   docify-zip -f snips -p 123
+   ```
+
+
 ## license
 Code released under [the MIT license](https://github.com/afeiship/docify-zip/blob/master/LICENSE.txt).
 
