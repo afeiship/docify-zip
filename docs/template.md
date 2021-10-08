@@ -6,7 +6,7 @@
 [![size][size-image]][size-url]
 [![download][download-image]][download-url]
 
-![snapshot](https://tva1.sinaimg.cn/large/0081Kckwgy1gk87ynhkbaj30u60asasp.jpg)
+![snapshot](https://tva1.sinaimg.cn/large/008i3skNgy1gv865kab3sj60ju02at8u02.jpg)
 
 ## installation
 ```shell
@@ -21,7 +21,7 @@ __USAGE__
 ~~~
 
 ## user case
-1.  file with password
+1. file with password
    ```shell
    docify-zip -f html_post_test.html -p 123
    ```

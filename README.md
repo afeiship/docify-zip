@@ -6,7 +6,7 @@
 [![size][size-image]][size-url]
 [![download][download-image]][download-url]
 
-![snapshot](https://tva1.sinaimg.cn/large/0081Kckwgy1gk87ynhkbaj30u60asasp.jpg)
+![snapshot](https://tva1.sinaimg.cn/large/008i3skNgy1gv865kab3sj60ju02at8u02.jpg)
 
 ## installation
 ```shell
@@ -20,11 +20,25 @@ npm i && npm link
 Usage: docify-zip [options]
 
 Options:
-  -V, --version       output the version number
-  -d, --debug         only show cmds, but not clean.
-  -s, --src <string>  source filepath. (default: "./src")
-  -h, --help          display help for command
+  -V, --version            output the version number
+  -d, --debug              only show cmds, but not clean.
+  -f, --filename <string>  The zip target filename.
+  -p, --password <string>  The zip password.
+  -s, --suffix <string>    The filename suffix (default: "")
+  -h, --help               display help for command
 ~~~
+
+## user case
+1. file with password
+   ```shell
+   docify-zip -f html_post_test.html -p 123
+   ```
+
+2. folder with password
+   ```shell
+   docify-zip -f snips -p 123
+   ```
+
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/docify-zip/blob/master/LICENSE.txt).
