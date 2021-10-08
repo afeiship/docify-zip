@@ -31,6 +31,8 @@ __USAGE__
    docify-zip -f snips -p 123
    ```
 
+## resources
+- https://ma.ttias.be/create-a-password-protected-zip-file-on-mac-osx/
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/docify-zip/blob/master/LICENSE.txt).
