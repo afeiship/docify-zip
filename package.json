@@ -8,7 +8,7 @@
     "email": "1290657123@qq.com"
   },
   "bin": {
-    "docify-zip": "bin/index.js"
+    "dzip": "bin/index.js"
   },
   "scripts": {
     "build": "gulp",
