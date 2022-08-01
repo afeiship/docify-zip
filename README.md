@@ -17,7 +17,7 @@ npm i && npm link
 
 ## usage
 ~~~
-Usage: docify-zip [options]
+Usage: dzip [options]
 
 Options:
   -V, --version            output the version number
@@ -31,12 +31,12 @@ Options:
 ## user case
 1. file with password
    ```shell
-   docify-zip -f html_post_test.html -p 123
+   dzip -f html_post_test.html -p 123
    ```
 
 2. folder with password
    ```shell
-   docify-zip -f snips -p 123
+   dzip -f snips -p 123
    ```
 
 ## resources
