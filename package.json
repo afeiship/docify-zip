@@ -17,6 +17,9 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@jswork/next": "^1.0.5",
+    "@jswork/next-absolute-package": "^1.0.1",
+    "@jswork/next-get-key": "^1.0.0",
     "@jswork/next-node-downfile": "^1.0.0",
     "chalk": "^4.1.0",
     "commander": "^6.2.0",
@@ -29,9 +32,6 @@
     "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
-    "@jswork/next": "^1.0.5",
-    "@jswork/next-absolute-package": "^1.0.1",
-    "@jswork/next-get-key": "^1.0.0",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^2.0.5",
@@ -40,7 +40,8 @@
     "release-it": "^14.2.1"
   },
   "keywords": [
-    "boilerplate",
+    "docify",
+    "zip",
     "cli"
   ]
 }
